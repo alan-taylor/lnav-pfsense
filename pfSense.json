@@ -16,7 +16,6 @@
         "value": {
 			"log_hostname": {
                 "kind": "string",
-                "collate": "ipaddress",
                 "description": "The name of the host that generated the message"
             },
 			"filterlog": {
