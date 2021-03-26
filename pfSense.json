@@ -16,11 +16,11 @@
         "value": {
 			"log_hostname": {
                 "kind": "string",
-                "description": "The name of the host that generated the message"
+                "description": "The name of the firewall that generated the message"
             },
 			"filterlog": {
 				"kind":	"string",
-				"description":	"Included to allow filtering out the text 'filterlog:'"
+				"description":	"String Constant, included to allow filtering out the text 'filterlog:'"
 			},
 			"rule_number": {
 				"kind":	"integer",
@@ -61,27 +61,27 @@
 			},
 			"tos": {
 				"kind": "string",
-				"description": "Type of Service identification"
+				"description": "Type of Service identification, IPv4 specific"
 			},
 			"ecn": {
 				"kind": "string",
-				"description": "Explicit Congestion Notification"
+				"description": "Explicit Congestion Notification, IPv4 specific"
 			},
 			"ttl": {
 				"kind": "integer",
-				"description": "time To Live (TTL) of the packet"
+				"description": "time To Live (TTL) of the packet, IPv4 specific"
 			},
 			"id": {
 				"kind": "integer",
-				"description": "ID of the packet"
+				"description": "ID of the packet, IPv4 specific"
 			},
 			"offset": {
 				"kind": "integer",
-				"description": "Fragment offset"
+				"description": "Fragment offset, IPv4 specific"
 			},
 			"flags": {
 				"kind": "string",
-				"description": "IP Flags, NOT TCP flags - those are later"
+				"description": "IP Flags, NOT TCP flags those are later, IPv4 specific"
 			},
 			"protocol_id": {
 				"kind": "integer",
@@ -93,37 +93,37 @@
 			},
 			"length": {
 				"kind": "integer",
-				"description": "Length of the packet in bytes"
+				"description": "Length of the packet in bytes, IP data"
 			},
 			"src_address": {
 				"kind": "string",
-				"description": "The source IP address of the logged traffic"
+				"description": "The source IP address of the logged traffic, IP data"
 			},
 			"dest_address": {
 				"kind": "string",
-				"description": "The destination IP address of the logged traffic"
+				"description": "The destination IP address of the logged traffic, IP data"
 			},
 			"src_port": {
 				"kind": "integer",
                 "identifier": true,
-				"description": "Source port number"
+				"description": "Source port number, TCP data"
 			},
 			"dest_port": {
 				"kind": "integer",
                 "identifier": true,
-				"description": "Destination port number"
+				"description": "Destination port number, TCP data"
 			},
 			"class": {
 				"kind": "string",
-				"description": "ToS traffic class - hex"
+				"description": "ToS traffic class, hex, IPv6 data"
 			},
 			"flow_label": {
 				"kind": "string",
-				"description": "Flow label"
+				"description": "Flow label, IPv6 data"
 			},
 			"hop_limit": {
 				"kind": "integer",
-				"description": "Hop Limit - similar to IPv4 TTL"
+				"description": "Hop Limit, similar to IPv4 TTL, IPv6 data"
 			}
         },
         "sample": [
