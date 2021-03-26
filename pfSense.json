@@ -4,27 +4,15 @@
         "title": "pfSense",
         "description": "The firewall log format for pfSense.",
         "url": "https://docs.netgate.com/pfsense/en/latest/monitoring/logs/raw-filter-format.html",
+		"file-pattern":	".*filterlog.*\\.log",
         "regex": {
-            "IPv4-1": {
-                "pattern":	"^(?<timestamp>(?:[a-zA-z]{3,} +\\d{1,2} \\d{2}:\\d{2}:\\d{2})?) (?<log_hostname>[\\w-]+\\.?[\\w-]*\\.?[\\w-]*\\.?[\\w-]*) (?<filterlog>filterlog:) (?<rule_number>\\d+),(?<subrule_number>\\d*),(?<anchor>\\w*),(?<tracker>\\d+),(?<interface>\\w+(\\.\\d{1,2})*),(?<reason>[\\w\\(\\)]+),(?<action>[\\w\\(\\)]+),(?<direction>[\\w+\\(\\)]+),(?<ip_version>[4|6]),(?<tos>0x[\\da-fA-F]+),(?<ecn>\\w*),(?<ttl>\\d+),(?<id>\\d+),(?<offset>\\d+),(?<flags>\\w+),(?<protocol_id>\\d{1,3}),(?<protocol_text>[\\w\\-+\\.\\/]*),(?<length>\\d+),(?<source_address>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}),(?<destination_address>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}),(?<source_port>\\d{1,5}),(?<destination_port>\\d{1,5}),(?<data_length>\\d+),(?<tcp_flags>[\\w\\.]*),(?<sequence_number>\\d*),(?<ack_number>\\d*),(?<window_size>\\d*),(?<urg>\\d*),*(?<tcp_options>(\\w*;*)*)"
+            "IPv4": {
+                "pattern":	"^(?<timestamp>(?:[a-zA-z]{3,} +\\d{1,2} \\d{2}:\\d{2}:\\d{2})?) (?<log_hostname>[\\w-]+\\.?[\\w-]*\\.?[\\w-]*\\.?[\\w-]*) (?<filterlog>filterlog:) (?<rule_number>\\d+),(?<subrule_number>\\d*),(?<anchor>\\w*),(?<tracker>\\d+),(?<interface>\\w+(\\.\\d{1,2})*),(?<reason>[\\w\\(\\)]+),(?<action>[\\w\\(\\)]+),(?<direction>[\\w+\\(\\)]+),(?<ip_ver>[4|6]),(?<tos>0x[\\da-fA-F]+),(?<ecn>\\w*),(?<ttl>\\d+),(?<id>\\d+),(?<offset>\\d+),(?<flags>\\w+),(?<protocol_id>\\d{1,3}),(?<protocol_text>[\\w\\-+\\.\\/]*),(?<length>\\d+),(?<src_address>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}),(?<dest_address>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}),(?<src_port>\\d{1,5})*,*(?<dest_port>\\d{1,5})*,*(?<body>.*)"
             },
-	        "IPv4-2": {
-	            "pattern":	"^(?<timestamp>(?:[a-zA-z]{3,} +\\d{1,2} \\d{2}:\\d{2}:\\d{2})?) (?<log_hostname>[\\w-]+\\.?[\\w-]*\\.?[\\w-]*\\.?[\\w-]*) (?<filterlog>filterlog:) (?<rule_number>\\d+),(?<subrule_number>\\d*),(?<anchor>\\w*),(?<tracker>\\d+),(?<interface>\\w+(\\.\\d{1,2})*),(?<reason>[\\w\\(\\)]+),(?<action>[\\w\\(\\)]+),(?<direction>[\\w+\\(\\)]+),(?<ip_version>[4|6]),(?<tos>0x[\\da-fA-F]+),(?<ecn>\\w*),(?<ttl>\\d+),(?<id>\\d+),(?<offset>\\d+),(?<flags>\\w+),(?<protocol_id>\\d{1,3}),(?<protocol_text>[\\w\\-+\\.\\/]*),(?<length>\\d+),(?<source_address>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}),(?<destination_address>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}),(?<source_port>\\d{1,5}),(?<destination_port>\\d{1,5}),(?<data_length>\\d+)"
-	        },
-			"IPv6-1": {
-				"pattern":	"^(?<timestamp>(?:[a-zA-z]{3,} +\\d{1,2} \\d{2}:\\d{2}:\\d{2})?) (?<log_hostname>[\\w-]+\\.?[\\w-]*\\.?[\\w-]*\\.?[\\w-]*) (?<filterlog>filterlog:) (?<rule_number>\\d+),(?<subrule_number>\\d*),(?<anchor>\\w*),(?<tracker>\\d+),(?<interface>\\w+(\\.\\d{1,2})*),(?<reason>[\\w\\(\\)]+),(?<action>[\\w\\(\\)]+),(?<direction>\\w+),(?<ip_version>[4|6]),(?<class>0x[\\da-fA-F]+),(?<flow_label>\\w*),(?<hop_limit>\\d+),(?<protocol_text>[\\w\\-+\\.\\/]*),(?<protocol_id>\\d{1,3}),(?<length>\\d+),(?<source_address>[\\da-fA-F:]+),(?<destination_address>[\\da-fA-F:]+),(?<source_port>\\d{1,5}),(?<destination_port>\\d{1,5}),(?<data_length>\\d+)"
-			},
-			"IPV6-2": {
-				"pattern": "^(?<timestamp>(?:[a-zA-z]{3,} +\\d{1,2} \\d{2}:\\d{2}:\\d{2})?) (?<log_hostname>[\\w-]+\\.?[\\w-]*\\.?[\\w-]*\\.?[\\w-]*) (?<filterlog>filterlog:) (?<rule_number>\\d+),(?<subrule_number>\\d*),(?<anchor>\\w*),(?<tracker>\\d+),(?<interface>\\w+(\\.\\d{1,2})*),(?<reason>[\\w\\(\\)]+),(?<action>[\\w\\(\\)]+),(?<direction>\\w+),(?<ip_version>[4|6]),(?<class>0x[\\da-fA-F]+),(?<flow_label>\\w*),(?<hop_limit>\\d+),(?<protocol_text>[\\w\\-+\\.\\/]*),(?<protocol_id>\\d{1,3}),(?<length>\\d+),(?<source_address>[\\da-fA-F:]+),(?<destination_address>[\\da-fA-F:]+),(?<ipv6_text>[\\w,]*)"
-			},
-			"ICMP": {
-				"pattern": "(?<timestamp>(?:[a-zA-z]{3,} +\\d{1,2} \\d{2}:\\d{2}:\\d{2})?) (?<log_hostname>[\\w-]+\\.?[\\w-]*\\.?[\\w-]*\\.?[\\w-]*) (?<filterlog>filterlog:) (?<rule_number>\\d+),(?<subrule_number>\\d*),(?<anchor>\\w*),(?<tracker>\\d+),(?<interface>\\w+(\\.\\d{1,2})*),(?<reason>[\\w\\(\\)]+),(?<action>[\\w\\(\\)]+),(?<direction>[\\w+\\(\\)]+),(?<ip_version>[4|6]),(?<tos>0x[\\da-fA-F]+),(?<ecn>\\w*),(?<ttl>\\d+),(?<id>\\d+),(?<offset>\\d+),(?<flags>\\w+),(?<protocol_id>\\d{1,3}),(?<protocol_text>[\\w\\-+\\.\\/]*),(?<length>\\d+),(?<source_address>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}),(?<destination_address>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}),(?<icmp_type>\\w+),(?<icmp_id>\\d+),(?<icmp_seq>\\d+)"
-			},
-			"IGMP":	{
-				"pattern":	"^(?<timestamp>(?:[a-zA-z]{3,} +\\d{1,2} \\d{2}:\\d{2}:\\d{2})?) (?<log_hostname>[\\w-]+\\.?[\\w-]*\\.?[\\w-]*\\.?[\\w-]*) (?<filterlog>filterlog:) (?<rule_number>\\d+),(?<subrule_number>\\d*),(?<anchor>\\w*),(?<tracker>\\d+),(?<interface>\\w+(\\.\\d{1,2})*),(?<reason>[\\w\\(\\)]+),(?<action>[\\w\\(\\)]+),(?<direction>[\\w+\\(\\)]+),(?<ip_version>[4|6]),(?<tos>0x[\\da-fA-F]+),(?<ecn>\\w*),(?<ttl>\\d+),(?<id>\\d+),(?<offset>\\d+),(?<flags>\\w+),(?<protocol_id>\\d{1,3}),(?<protocol_text>[\\w\\-+\\.\\/]*),(?<length>\\d+),(?<source_address>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}),(?<destination_address>\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}),(?<igmp_text>[\\w=]+)"
+			"IPv6": {
+				"pattern":	"^(?<timestamp>(?:[a-zA-z]{3,} +\\d{1,2} \\d{2}:\\d{2}:\\d{2})?) (?<log_hostname>[\\w-]+\\.?[\\w-]*\\.?[\\w-]*\\.?[\\w-]*) (?<filterlog>filterlog:) (?<rule_number>\\d+),(?<subrule_number>\\d*),(?<anchor>\\w*),(?<tracker>\\d+),(?<interface>\\w+(\\.\\d{1,2})*),(?<reason>[\\w\\(\\)]+),(?<action>[\\w\\(\\)]+),(?<direction>\\w+),(?<ip_ver>[4|6]),(?<class>0x[\\da-fA-F]+),(?<flow_label>\\w*),(?<hop_limit>\\d+),(?<protocol_text>[\\w\\-+\\.\\/]*),(?<protocol_id>\\d{1,3}),(?<length>\\d+),(?<src_address>[\\da-fA-F:]+),(?<dest_address>[\\da-fA-F:]+),(?<src_port>\\d{1,5})*,*(?<dest_port>\\d{1,5})*,*(?<body>.*)"
 			}
         },
-        "multiline": false,
         "value": {
 			"log_hostname": {
                 "kind": "string",
@@ -68,7 +56,7 @@
 				"kind": "string",
 				"description": "Direction of the logged traffic"
 			},
-			"ip_version": {
+			"ip_ver": {
 				"kind": "integer",
 				"description": "IPv4 or IPv6"
 			},
@@ -108,53 +96,23 @@
 				"kind": "integer",
 				"description": "Length of the packet in bytes"
 			},
-			"source_address": {
+			"src_address": {
 				"kind": "string",
-                "identifier": true,
 				"description": "The source IP address of the logged traffic"
 			},
-			"destination_address": {
+			"dest_address": {
 				"kind": "string",
-                "identifier": true,
 				"description": "The destination IP address of the logged traffic"
 			},
-			"source_port": {
+			"src_port": {
 				"kind": "integer",
                 "identifier": true,
 				"description": "Source port number"
 			},
-			"destination_port": {
+			"dest_port": {
 				"kind": "integer",
                 "identifier": true,
 				"description": "Destination port number"
-			},
-			"data_length": {
-				"kind": "integer",
-				"description": "Data/payload length"
-			},
-			"tcp_flags": {
-				"kind": "string",
-				"description": "TCP Flags - S, A, ., F, R, P, U, E, W"
-			},
-			"sequence_number": {
-				"kind": "integer",
-				"description": "TCP Sequence ID"
-			},
-			"ack_number": {
-				"kind": "integer",
-				"description": "ACK number"
-			},
-			"window_size": {
-				"kind": "integer",
-				"description": "Windows size"
-			},
-			"urg": {
-				"kind": "integer",
-				"description": "Urgent pointer data"
-			},
-			"tcp_options": {
-				"kind": "string",
-				"description": "TCP Options"
 			},
 			"class": {
 				"kind": "string",
@@ -167,26 +125,6 @@
 			"hop_limit": {
 				"kind": "integer",
 				"description": "Hop Limit - similar to IPv4 TTL"
-			},
-			"ipv6_text": {
-				"kind": "string",
-				"description": "Various IPv6 flags and data"
-			},
-			"icmp_type": {
-				"kind": "string",
-				"description": "ICMP type"
-			},
-			"icmp_id": {
-				"kind": "integer",
-				"description": "ID of the echo request/reply"
-			},
-			"icmp_seq": {
-				"kind": "integer",
-				"description": "Sequence number of the echo request/reply"
-			},
-			"igmp_text": {
-				"kind": "string",
-				"description": "Various IGMP flags and data"
 			}
         },
         "sample": [
