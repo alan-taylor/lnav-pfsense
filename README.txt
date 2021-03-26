@@ -21,12 +21,8 @@ Mar 18 10:52:21 computer.domain.tld filterlog: 136,,,1615175071,igb1.8,match,pas
 
 Mar 12 02:53:34 computer.domain.tld filterlog: 5,,,1000000103,lagg0.9,match,block,in,4,0x0,,1,1918,0,none,2,igmp,32,111.22.33.1,224.22.11.1,datalength=8"
 
-This pfSense.json file allows lnav to read the pfSense firewall logs in to an
-sqlite database with the following fields:
-timestamp, log_hostname, rule_number, subrule_number, anchor, tracker, interface,
-reason, action, direction, ip_ver, tos, ecn, ttl, id, offset, flags, class,
-flow_label, hop_limit, protocol_id, protocol_text, length, src_address,
-dest_address, src_port, dest_port
+This pfSense.json file allows lnav to read the pfSense firewall logs in to an sqlite database with the following fields:
+timestamp, log_hostname, rule_number, subrule_number, anchor, tracker, interface, reason, action, direction, ip_ver, tos, ecn, ttl, id, offset, flags, class, flow_label, hop_limit, protocol_id, protocol_text, length, src_address, dest_address, src_port, dest_port
 
 All data after this on each line of the logs is put into a field called:
 body
@@ -34,8 +30,7 @@ body
 Many of these attributes are specific to the pfSense firewall log format, documented at:
 https://docs.netgate.com/pfsense/en/latest/monitoring/logs/raw-filter-format.html
 
-There is currently a bug in lnav (0.90) that produces an error if you install
-with:
+There is currently a bug in lnav (0.90) that produces an error if you install with:
 $ lnav -i pfSense.json
 The easiest workaround is simply copy the file to your format directory, likely:
 $ cp pfSense.json ~/.config/lnav/formats/installed/
