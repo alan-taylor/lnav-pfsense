@@ -91,7 +91,7 @@
 			},
 			"protocol_text": {
 				"kind": "string",
-				"description": "IP protocol text, e.g. TCP UDP ICMP"
+				"description": "IP protocol text, e.g. TCP UDP ICMP IGMP"
 			},
 			"length": {
 				"kind": "integer",

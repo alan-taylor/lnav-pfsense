@@ -1,10 +1,10 @@
-26 Mar 2021
+28 Mar 2021
 pfSense.json by Alan Taylor, https://github.com/alan-taylor/lnav-pfsense
 
 lnav by Tim Stack, https://github.com/tstack/lnav
 
 This is a .json file to upload the pfSense firewall log format to lnav.
-Development and testing limited to linux.
+Development and testing limited to linux and pfSense 2.4.5
 
 Examples of current log formats supported are (from pfSense filterlog.log file):
 Mar 18 10:51:53 computer.domain.tld filterlog: 5,,,1000000103,igb0,match,block,in,4,0x0,,41,4812,0,none,6,tcp,44,111.22.33.1,224.22.11.1,39248,10443,0,S,980905229,,1024,,mss
